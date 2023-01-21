@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.games;
 
 import lombok.Builder;
 import lombok.Data;
@@ -6,7 +6,7 @@ import lombok.Data;
 import java.util.Arrays;
 import java.util.List;
 
-public class ShenTest {
+public class RoShamBoGame {
 
     private static final String PLAYER_A = "甲";
     private static final String PLAYER_B = "乙";

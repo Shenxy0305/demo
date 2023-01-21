@@ -4,6 +4,13 @@ server:
 spring:
   application:
     name: demo
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: Shenxy198097
+    lettuce:
+      pool:
+        max-active: 8
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver

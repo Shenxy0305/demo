@@ -3,19 +3,17 @@ package com.example.demo.entity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.Builder;
+import com.baomidou.mybatisplus.annotation.Version;
 import lombok.Data;
 
 @Data
-@Builder
-@TableName("student")
-public class StudentEntity {
+@TableName("secKill")
+public class SecKillEntity {
     @TableId("id")
     private String id;
-    @TableField("name")
-    private String name;
-    @TableField("age")
-    private Integer age;
-    @TableField("sex")
-    private Integer sex;
+    @TableField("stock")
+    private Integer stock;
+    @Version
+    @TableField("version")
+    private Long version;
 }

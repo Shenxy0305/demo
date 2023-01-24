@@ -6,7 +6,6 @@ import lombok.NonNull;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-@Data
 public class StudentRequest {
 
     @Data

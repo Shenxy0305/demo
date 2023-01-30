@@ -1,12 +1,11 @@
 package com.example.demo.service.impl;
 
-import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson2.JSON;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.demo.entity.StudentEntity;
 import com.example.demo.entity.dto.StudentDto;
 import com.example.demo.mapper.StudentMapper;
 import com.example.demo.service.IStudentService;
-import com.example.demo.utils.enums.ResultEnum;
 import com.example.demo.utils.result.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

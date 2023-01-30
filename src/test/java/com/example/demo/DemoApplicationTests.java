@@ -1,12 +1,10 @@
 package com.example.demo;
 
+import com.example.demo.entity.SecKillEntity;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @SpringBootTest
@@ -17,7 +15,7 @@ class DemoApplicationTests {
     }
 
     public static void main(String[] args) {
-        
+        System.out.println(UUID.randomUUID());
     }
 
 }

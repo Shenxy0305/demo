@@ -1,10 +1,12 @@
 package com.example.demo.single;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.example.demo.bean.utils.RedisUtil;
 import com.example.demo.bean.utils.SpringContextUtils;
 import com.example.demo.entity.SecKillEntity;
 import com.example.demo.entity.dto.SecKillDto;
 import com.example.demo.mapper.SecKillMapper;
+import com.google.common.base.Preconditions;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -13,9 +15,11 @@ public class SecKillSingletion {
 
     private static volatile SecKillSingletion instance;
     private static SecKillMapper secKillMapper;
+    private static RedisUtil redisUtil;
 
     private SecKillSingletion() {
         secKillMapper = SpringContextUtils.getBean(SecKillMapper.class);
+        redisUtil = SpringContextUtils.getBean(RedisUtil.class);
     }
 
     public static SecKillSingletion getInstance() {
@@ -59,6 +63,32 @@ public class SecKillSingletion {
         }
 
         return false;
+    }
+
+    /**
+     * byRedis
+     * @param secKillDto secKillDto
+     */
+    public Boolean byRedis(SecKillDto secKillDto) throws InterruptedException {
+
+        String id = secKillDto.getId();
+
+        if (!redisUtil.hasKey(id)) {
+            SecKillEntity secKillEntity = secKillMapper.selectById(id);
+            synchronized (SecKillSingletion.class) {
+                if (!redisUtil.hasKey(id)) {
+                    if (redisUtil.incrLock(id)) {
+                        Preconditions.checkArgument(redisUtil.set(id, secKillEntity.getStock()));
+                    } else {
+                        Thread.sleep(1000L);
+                    }
+                }
+            }
+        }
+
+        // TODO:
+
+        return null;
     }
 
 }

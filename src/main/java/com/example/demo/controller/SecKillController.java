@@ -2,12 +2,9 @@ package com.example.demo.controller;
 
 import com.alibaba.fastjson2.JSON;
 import com.example.demo.controller.vo.request.SecKillRequest;
-import com.example.demo.controller.vo.request.StudentRequest;
 import com.example.demo.entity.dto.SecKillDto;
-import com.example.demo.entity.dto.StudentDto;
 import com.example.demo.service.ISecKillService;
-import com.example.demo.utils.enums.SexEnum;
-import com.example.demo.utils.result.Result;
+import com.example.demo.http.utils.result.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

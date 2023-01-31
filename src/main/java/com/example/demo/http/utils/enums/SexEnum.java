@@ -1,6 +1,4 @@
-package com.example.demo.utils.enums;
-
-import lombok.Getter;
+package com.example.demo.http.utils.enums;
 
 import java.util.HashMap;
 import java.util.Map;

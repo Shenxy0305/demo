@@ -6,7 +6,7 @@ import com.example.demo.entity.dto.SecKillDto;
 import com.example.demo.mapper.SecKillMapper;
 import com.example.demo.service.ISecKillService;
 import com.example.demo.single.SecKillSingletion;
-import com.example.demo.utils.result.Result;
+import com.example.demo.http.utils.result.Result;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

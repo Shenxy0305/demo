@@ -1,4 +1,4 @@
-package com.example.demo.utils.enums;
+package com.example.demo.http.utils.enums;
 
 public enum  ResultEnum {
     /**

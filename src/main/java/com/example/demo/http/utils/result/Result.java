@@ -1,6 +1,6 @@
-package com.example.demo.utils.result;
+package com.example.demo.http.utils.result;
 
-import com.example.demo.utils.enums.ResultEnum;
+import com.example.demo.http.utils.enums.ResultEnum;
 
 public class Result<T> {
     private Integer code;
